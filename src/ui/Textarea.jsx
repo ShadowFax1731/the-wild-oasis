@@ -1,6 +1,7 @@
-import styled from 'styled-components';
+import styled from "styled-components";
+import { forwardRef } from "react";
 
-export const Textarea = styled.textarea`
+const StyledTextarea = styled.textarea`
   padding: 0.8rem 1.2rem;
   border: 1px solid var(--color-grey-300);
   border-radius: 5px;
@@ -9,3 +10,9 @@ export const Textarea = styled.textarea`
   width: 100%;
   height: 8rem;
 `;
+
+const Textarea = forwardRef(function Textarea(props, ref) {
+  return <StyledTextarea ref={ref} {...props} />;
+});
+
+export default Textarea;
